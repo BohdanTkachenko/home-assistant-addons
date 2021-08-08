@@ -21,7 +21,7 @@ MAX_LEASE=$(bashio::config 'max_lease')
 } > "${CONFIG}"
 
 for line in $(bashio::config 'extra|keys'); do
-    echo "$(bashio::config "extra[${line}]")" >> "${CONFIG}"
+    bashio::config "extra[${line}]" >> "${CONFIG}"
 done
 
 # Create networks
